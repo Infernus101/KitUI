@@ -1,4 +1,5 @@
 <!-- replace the ' ' with 'x' in the brackets -->
+## KitUI Issue
 - [ ] This issue isn't duplicated - you can check if it is by using the search bar located at the top left hand corner and select "Issues" on the left.
 - [ ] This issue includes appropriate markdown for sections - e.g. code blocks for crash dumps.
 - [ ] This issue is understandable in English.
@@ -19,7 +20,7 @@ MCPE Version: (insert game version here)
 Plugin Version: (insert commit hash here)
 PHP version: 7.2
 <!-- OPTIONAL INFORMATION - use this section for posting crash dumps, backtraces or other files(please use code markdown!) -->
-## Optional information such as Client OS/Version What was happening when the error occured.
+## Optional information
 ...
 
 
@@ -27,6 +28,6 @@ PHP version: 7.2
 Replace this text with console / error logs or crash dumps. (Do not remove the triple backticks above and below this.)
 ```
 
-```
-Replace this text with kits.yml if required. (Do not remove the triple backticks above and below this.)
-```
+<!-- Config - paste kits.yml if required -->
+## Config
+...
