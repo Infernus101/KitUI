@@ -87,7 +87,6 @@ class Kit{
         }
 
         $this->pl->hasKit[strtolower($player->getName())] = $this;
-		$player->sendMessage($this->pl->language->getTranslation("sel-kit", ucfirst($this->name)));
 
     }
 
