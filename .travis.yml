@@ -20,9 +20,9 @@ before_script:
  - mkdir plugins
  - cd plugins
  - wget -O DevTools.phar https://poggit.pmmp.io/r/8459/PocketMine-DevTools.phar
- - cd /home/travis/build/Infernus101/KitUI/
- - cp -rf Travis.php PocketMine-MP/
- - cp -rf / PocketMine-MP/plugins/
+ - cd /home/travis/build/Infernus101/
+ - cp -rf KitUI/Travis.php PocketMine-MP/
+ - cp -rf KitUI/ PocketMine-MP/plugins/
  - cd PocketMine-MP
 
 script:
