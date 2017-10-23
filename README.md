@@ -11,7 +11,7 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 
 ## Permissions
 - kit.command - Permission to use /kit
-- kit.<kitname> - Permission to use kit specified after kit.
+- kit.(kitname) - Permission to use kit specified after kit.
 
 ## Features
 - Easy config
