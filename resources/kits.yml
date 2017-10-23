@@ -1,0 +1,41 @@
+---
+testkit:
+  # Format: "id:damage:count:name:ench_name:ench_level"
+
+  # If you want only custom name (no enchantments): "id:damage:count:name"
+
+  # If you don't want enchantments or custom name: "id:damage:count"
+
+  # If you want only enchantments (no custom name): "id:damage:count:DEFAULT:ench_name:ench_level" -- you have to put DEFAULT in the name field
+
+  # If you want more than one enchantment just do: "id:damage:count:name:ench1_name:ench1_level:ench2_name:ench2_level"
+  # or "id:damage:count:DEFAULT:ench1_name:ench1_level:ench2_name:ench2_level" if you don't want a custom item name
+
+  # Please note: You have to write numeric IDs
+  items:
+  - "260:0:10"
+  - "267:0:1:Sword Name:sharpness:3:knockback:1"
+  helmet: "302:0:1"
+  chestplate: "303:0:1:DEFAULT:protection:1"
+  leggings: "304:0:1:Leggings Name"
+  boots: "305:0:1"
+
+  commands: # {player} will get replaced by player's name
+  - "tell {player} Kit claimed!"
+
+  cooldown:
+    hours: 24
+    minutes: 30
+
+  # Format: "name:time:amplifier"
+  # Time is in seconds
+  effects:
+  - "speed:120:2"
+
+  # Add a cost for the kit. Compatible with EconomyAPI only
+  # Put 0 if you want the kit to be free
+  money: 50
+
+  # Info to show when selected a Kit in UI form
+  info: "This kit is too op XD Cost: 50$"
+...
