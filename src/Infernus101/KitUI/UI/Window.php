@@ -1,6 +1,6 @@
 <?php
 
-namespace Infernus101\KitUI\ui;
+namespace Infernus101\KitUI\UI;
 
 use Infernus101\KitUI\Main;
 use pocketmine\network\mcpe\protocol\ModalFormRequestPacket;
