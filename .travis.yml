@@ -22,7 +22,7 @@ before_script:
  - wget -O DevTools.phar https://poggit.pmmp.io/r/8459/PocketMine-DevTools.phar
  - cd /home/travis/build/Infernus101/KitUI/
  - cp -rf Travis.php PocketMine-MP/
- - cp -rf KitUI/ PocketMine-MP/plugins/
+ - cp -rf Infernus101/ PocketMine-MP/plugins/
  - cd PocketMine-MP
 
 script:
