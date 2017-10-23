@@ -9,10 +9,10 @@ use pocketmine\Player;
 
 abstract class Window {
 
-	protected $pl = null;
-	protected $player = null;
-	public static $kit = null;
-	public static $error = null;
+	protected $pl;
+	protected $player;
+	public static $kit;
+	public static $error;
 	public static $id = array();
 	
 	protected $data = [];
