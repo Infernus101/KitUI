@@ -51,22 +51,26 @@ class Main extends PluginBase implements Listener {
       $this->getServer()->getLogger()->notice("[KitUI] Disabled! - By Infernus101");
     }
 	
-    public function onCommand(CommandSender $sender, Command $cmd, String $label, array $args): bool{
-      if(!$sender instanceof Player){
-        $sender->sendMessage(TextFormat::RED."> Command must be run ingame!");
-        return true;
+	public function onCommand(CommandSender $sender, Command $cmd, String $label, array $args): bool{
+	  if(!$sender instanceof Player){
+		  $sender->sendMessage(TextFormat::RED."> Command must be run ingame!");
+		  return true;
+	  }
+	  switch(strtolower($cmd->getName())){
+            case "kit":
+			if(isset($args[0])){
+				$sender->sendMessage(TextFormat::GREEN."About:\nKit UI by Infernus101! github.com/Infernus101/KitUI\n".TextFormat::AQUA."Servers - FallenTech.tk | CounterTech.tk 19132");
+				return false;
+			}
+                $handler = new Handler();
+				$packet = new ModalFormRequestPacket();
+				$packet->formId = $handler->getWindowIdFor(Handler::KIT_MAIN_MENU);
+				$packet->formData = $handler->getWindowJson(Handler::KIT_MAIN_MENU, $this, $sender);
+				$sender->dataPacket($packet);
+            break;
       }
-      switch(strtolower($cmd->getName())){
-              case "kit":
-                  $handler = new Handler();
-          $packet = new ModalFormRequestPacket();
-          $packet->formId = $handler->getWindowIdFor(Handler::KIT_MAIN_MENU);
-          $packet->formData = $handler->getWindowJson(Handler::KIT_MAIN_MENU, $this, $sender);
-          $sender->dataPacket($packet);
-                  break;
-          }
-          return true;
-    }
+        return true;
+	}
 	
     private function configFixer(){
           $this->saveResource("kits.yml");
