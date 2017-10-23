@@ -33,7 +33,7 @@ class Main extends PluginBase implements Listener {
       file_put_contents($this->getDataFolder() . $file, $this->getResource($file));
       }
       }
-      $this->kit = new Config($this->getDataFolder() . "kit.yml", Config::YAML);
+      $this->kit = new Config($this->getDataFolder() . "kits.yml", Config::YAML);
       $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
       $this->language = new LangManager($this);
       $this->getServer()->getPluginManager()->registerEvents(new PlayerEvents($this), $this);
