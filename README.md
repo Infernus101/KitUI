@@ -2,6 +2,8 @@
 Select kits from a form! Just do /kit and get kits info and select it if available! For MCBE! PMMP support only!
 (No Plugin library or Virion required! Easy as pie!)
 
+[![Poggit-CI](https://poggit.pmmp.io/ci.shield/Infernus101/KitUI/KitUI)](https://poggit.pmmp.io/ci/Infernus101/KitUI/KitUI)
+
 ## Usage
 - /kit - List of kits fetched from kits.yml on a form!
 
