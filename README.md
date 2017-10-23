@@ -5,6 +5,10 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 ## Usage
 - /kit - List of kits fetched from kits.yml on a form!
 
+## Permissions
+- kit.command - Permission to use /kit
+- kit.<kitname> - Permission to use kit specified after kit.
+
 ## Features
 - Easy config
 - Enchantments

@@ -58,6 +58,10 @@ class Main extends PluginBase implements Listener {
 	  }
 	  switch(strtolower($cmd->getName())){
             case "kit":
+			if(!$sender->hasPermission("kit.command")){
+				$sender->sendMessage(TextFormat::RED."> You don't have permission to use this command!");
+				return false;
+			}
 			if(isset($args[0])){
 				$sender->sendMessage(TextFormat::GREEN."About:\nKit UI by Infernus101! github.com/Infernus101/KitUI\n".TextFormat::AQUA."Servers - FallenTech.tk | CounterTech.tk 19132");
 				return false;
