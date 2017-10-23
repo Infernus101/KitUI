@@ -9,6 +9,7 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 (No Plugin library or Virion required! Easy as pie!)
 
 [![Poggit-CI](https://poggit.pmmp.io/ci.shield/Infernus101/KitUI/KitUI)](https://poggit.pmmp.io/ci/Infernus101/KitUI/KitUI)
+[![TravisCI](https://api.travis-ci.org/Infernus101/KitUI.svg?branch=master)](https://travis-ci.org/Infernus101/KitUI)
 
 [Get the latest KitUI artifacts (PHAR file) here](https://poggit.pmmp.io/ci/Infernus101/KitUI/KitUI)
 
