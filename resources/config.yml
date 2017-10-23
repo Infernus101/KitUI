@@ -1,0 +1,6 @@
+---
+# Players can't get another kit till they die
+one-kit-per-life: true
+# Players can claim another kit if they relog(only if one-kit-per-life is true)
+reset-on-logout: true
+...
