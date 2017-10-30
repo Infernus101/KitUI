@@ -13,6 +13,7 @@ use onebone\economyapi\EconomyAPI;
 
 class KitInfo extends Window {
 	public function process(): void {
+		$info = "";
 		if(parent::$kit != null){
 			$kits = $this->pl->getKit(parent::$kit);
 			if(isset($kits->data["info"])) $info = $kits->data["info"];
