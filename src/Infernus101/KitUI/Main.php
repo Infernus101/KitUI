@@ -38,6 +38,10 @@ class Main extends PluginBase implements Listener {
       $this->language = new LangManager($this);
       $this->getServer()->getPluginManager()->registerEvents(new PlayerEvents($this), $this);
       $this->getServer()->getScheduler()->scheduleDelayedRepeatingTask(new CoolDownTask($this), 1200, 1200);
+	$customEnchants = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
+ 	if ($customEnchants !== null) {
+ 		$this->getServer()->getLogger()->info(TextFormat::GREEN . "[KitUI] Using PiggyCustomEnchants!");
+ 	}
       $allKits = yaml_parse_file($this->getDataFolder()."kits.yml");
       foreach($allKits as $name => $data){
         $this->kits[$name] = new Kit($this, $data, $name);
