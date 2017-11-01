@@ -15,12 +15,14 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\network\mcpe\protocol\ModalFormRequestPacket;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
+use PiggyCustomEnchants;
 
 class Main extends PluginBase implements Listener {
 	
   public $kits = [];
   public $kitused = [];
   public $language;
+  public $piggyEnchants;
 	
     public function onEnable(){
       @mkdir($this->getDataFolder()."timer/");
@@ -38,7 +40,7 @@ class Main extends PluginBase implements Listener {
       $this->language = new LangManager($this);
       $this->getServer()->getPluginManager()->registerEvents(new PlayerEvents($this), $this);
       $this->getServer()->getScheduler()->scheduleDelayedRepeatingTask(new CoolDownTask($this), 1200, 1200);
-	$customEnchants = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
+      $this->piggyEnchants = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
  	if ($customEnchants !== null) {
  		$this->getServer()->getLogger()->info(TextFormat::GREEN . "[KitUI] Using PiggyCustomEnchants!");
  	}
