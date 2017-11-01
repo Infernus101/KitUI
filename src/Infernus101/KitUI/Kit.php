@@ -10,6 +10,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\Player;
 
 use PiggyCustomEnchants\CustomEnchants\CustomEnchants;
+use pocketmine\Server;
 
 class Kit{
 
@@ -97,6 +98,7 @@ class Kit{
         if(strtolower($name) !== "default"){
             $item->setCustomName($name);
         }
+	    $ench = null;
         foreach($enchantments as $key => $name_level){
             if($key % 2 === 0){ //Name expected
                 $ench = Enchantment::getEnchantmentByName($name_level);
@@ -105,7 +107,12 @@ class Kit{
  			}
             }else{ //Level expected
                 if(isset($ench) and $ench !== null){
-                    $item->addEnchantment($ench->setLevel($name_level));
+                    if($ench instanceof CustomEnchants){
+ 			$customEnchants = Server::getInstance()->getPluginManager()->getPlugin("PiggyCustomEnchants");
+ 			$customEnchants->addEnchantment($item, $ench,(int) $name_level);
+ 			}else {
+ 				$item->addEnchantment($ench->setLevel((int) $name_level));
+ 			}
                 }
             }
         }
