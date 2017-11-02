@@ -21,6 +21,7 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 - Easy config
 - Enchantments in kit
 - Custom Enchantments (PiggyCustomEnchants) support
+- List of Custom Enchantments https://github.com/DaPigGuy/PiggyCustomEnchants/wiki/Enchantments
 - Effects in kit
 - Commands for kit
 - Cooldown for kit
