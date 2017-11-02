@@ -12,6 +12,7 @@ use pocketmine\Player;
 
 class KitMainMenu extends Window {
 	public function process(): void {
+		parent::$id = array();
 		$title = $this->pl->language->getTranslation("mainmenu-title");
 		$content = $this->pl->language->getTranslation("mainmenu-content");
 		$this->data = [
