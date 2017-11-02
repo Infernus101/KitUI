@@ -19,9 +19,8 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 
 ## Features
 - Easy config
-- Enchantments in kit
-- Custom Enchantments (PiggyCustomEnchants) support
-- List of Custom Enchantments https://github.com/DaPigGuy/PiggyCustomEnchants/wiki/Enchantments
+- Enchantments in kit. [List of Enchantments](https://github.com/pmmp/PocketMine-MP/blob/master/src/pocketmine/item/enchantment/Enchantment.php#L29)
+- Custom Enchantments (PiggyCustomEnchants) support. [List of Custom Enchantments](https://github.com/DaPigGuy/PiggyCustomEnchants/wiki/Enchantments)
 - Effects in kit
 - Commands for kit
 - Cooldown for kit
