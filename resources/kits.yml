@@ -38,4 +38,51 @@ testkit:
 
   # Info to show when selected a Kit in UI form
   info: "This kit is too op XD Cost: 50$"
+testkit2:
+
+  items:
+  - "260:0:10"
+  - "267:0:1:Sword Name:sharpness:3:knockback:1"
+  helmet: "302:0:1"
+  chestplate: "303:0:1:DEFAULT:protection:1"
+  leggings: "304:0:1:Leggings Name"
+  boots: "305:0:1"
+
+  commands:
+  - "tell {player} Kit 2 claimed!"
+
+  cooldown:
+    hours: 24
+    minutes: 30
+
+  effects:
+  - "speed:120:2"
+
+  money: 50
+
+  info: "This kit is too op XD Cost: 50$"
+  
+testkit3:
+
+  items:
+  - "260:0:10"
+  - "267:0:1:Sword Name:sharpness:3:knockback:1"
+  helmet: "302:0:1"
+  chestplate: "303:0:1:DEFAULT:protection:1"
+  leggings: "304:0:1:Leggings Name"
+  boots: "305:0:1"
+
+  commands:
+  - "tell {player} Kit 3 claimed!"
+
+  cooldown:
+    hours: 24
+    minutes: 30
+
+  effects:
+  - "speed:120:2"
+
+  money: 50
+
+  info: "This kit is too op XD Cost: 50$"
 ...
