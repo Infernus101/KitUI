@@ -106,8 +106,8 @@ class Kit{
                     $ench = CustomEnchants::getEnchantByName((string) $name_level);
                 }
             }elseif($ench !== null){
-                if($this->ak->piggyEnchants !== null && $ench instanceof CustomEnchants){
-                    $this->ak->piggyEnchants->addEnchantment($item, $ench->getName(), (int) $name_level);
+                if($this->pl->piggyEnchants !== null && $ench instanceof CustomEnchants){
+                    $this->pl->piggyEnchants->addEnchantment($item, $ench->getName(), (int) $name_level);
                 }else{
                     $item->addEnchantment($ench->setLevel((int) $name_level));
                 }
