@@ -6,6 +6,7 @@ use Infernus101\KitUI\UI\Handler;
 use Infernus101\KitUI\lang\LangManager;
 use Infernus101\KitUI\tasks\CoolDownTask;
 use pocketmine\Player;
+use pocketmine\item\enchantment\Enchantment;
 use pocketmine\Server;
 use pocketmine\command\CommandSender;
 use pocketmine\command\ConsoleCommandSender;
@@ -47,9 +48,9 @@ class Main extends PluginBase implements Listener {
             Enchantment::registerEnchantment(new Enchantment(Enchantment::SHARPNESS, "%enchantment.sharpness", Enchantment::RARITY_COMMON, Enchantment::ACTIVATION_SELF, Enchantment::SLOT_NONE));
         }
       $this->piggyEnchants = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
- 	if ($customEnchants !== null) {
- 		$this->getServer()->getLogger()->info(TextFormat::GREEN . "[KitUI] Using PiggyCustomEnchants!");
- 	}
+	if($this->piggyEnchants !== null){
+            $this->getServer()->getLogger()->info(TextFormat::GREEN . "[KitUI] Using PiggyCustomEnchants!");
+        }
       $allKits = yaml_parse_file($this->getDataFolder()."kits.yml");
       foreach($allKits as $name => $data){
         $this->kits[$name] = new Kit($this, $data, $name);
