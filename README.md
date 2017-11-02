@@ -19,11 +19,12 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 
 ## Features
 - Easy config
-- Enchantments
-- Effects
-- Commands 
-- Cooldown 
-- Custom Names for items
+- Enchantments in kit
+- Custom Enchantments (PiggyCustomEnchants) support
+- Effects in kit
+- Commands for kit
+- Cooldown for kit
+- Custom Names for items in kit
 - Economy
 - Unlimited Kits
 
