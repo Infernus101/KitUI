@@ -28,7 +28,7 @@ class KitMainMenu extends Window {
 	}
 
 	public function handle(ModalFormResponsePacket $packet): bool {
-		$index = (int) $packet->formData + 1;
+		$index = (int) $packet->formData;
 		$windowHandler = new Handler();
 		if(isset(parent::$id[$index])) $kit = parent::$id[$index];
 		else $kit = null;
