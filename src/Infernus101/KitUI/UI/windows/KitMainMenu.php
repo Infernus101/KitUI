@@ -12,6 +12,7 @@ use pocketmine\Player;
 
 class KitMainMenu extends Window {
 	public function process(): void {
+		$url = "";
 		parent::$id = array();
 		$title = $this->pl->language->getTranslation("mainmenu-title");
 		$content = $this->pl->language->getTranslation("mainmenu-content");
@@ -23,7 +24,13 @@ class KitMainMenu extends Window {
 		];
 		foreach($this->pl->kits as $name => $data){
 			$name = ucfirst($name);
-			$this->data["buttons"][] = ["text" => "§f$name"];
+			$kits = $this->pl->getKit($name);
+			if(isset($kits->data["image-url"])){
+			$url = $kits->data["image-url"];
+			$this->data["buttons"][] = ["text" => "$name", "image" => ["type" => "url", "data" => $url]];
+			}else{
+			$this->data["buttons"][] = ["text" => "$name"];	
+			}
 			array_push(parent::$id, "$name");
 		}
 	}
