@@ -35,6 +35,9 @@ testkit:
   # Add a cost for the kit. Compatible with EconomyAPI only
   # Put 0 if you want the kit to be free
   money: 50
+  
+  #Enter image url for the kit. png image. The image will be shown in kit main menu if its compatible.
+  image-url: "https://minecraft.gamepedia.com/media/minecraft.gamepedia.com/f/f2/Stone_Sword.png?version=ede6f1623f23eb3959b3d5287dc54bb0"
 
   # Info to show when selected a Kit in UI form
   info: "This kit is too op XD Cost: 50$"
@@ -59,6 +62,8 @@ testkit2:
   - "speed:120:2"
 
   money: 50
+  
+  image-url: ""
 
   info: "This kit is too op XD Cost: 50$"
   
@@ -83,6 +88,8 @@ testkit3:
   - "speed:120:2"
 
   money: 50
+  
+  image-url: ""
 
   info: "This kit is too op XD Cost: 50$"
 ...
