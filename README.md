@@ -1,5 +1,6 @@
-#  <img src="http://planetkidonline.com/wp-content/uploads/2015/04/first-aid-kit-icon-512x512-300x300.png" alt="KitUI logo" title="KitUI" align="center">
 # KitUI
+#  <img src="http://planetkidonline.com/wp-content/uploads/2015/04/first-aid-kit-icon-512x512-300x300.png" alt="KitUI logo" title="KitUI" align="center">
+------------
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Infernus101/KitUI.svg)](http://isitmaintained.com/project/Infernus101/KitUI "Average time to resolve an issue")
 [![license](https://img.shields.io/github/license/Infernus101/KitUI.svg)](http://github.com/Infernus101/KitUI/blob/master/LICENSE "License")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/Infernus101/KitUI.svg)](http://isitmaintained.com/project/Infernus101/KitUI "Percentage of issues still open")
