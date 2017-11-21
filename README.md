@@ -1,5 +1,4 @@
-# KitUI
-#  <img src="http://planetkidonline.com/wp-content/uploads/2015/04/first-aid-kit-icon-512x512-300x300.png" alt="KitUI logo" title="KitUI" align="center">
+# <img src="http://planetkidonline.com/wp-content/uploads/2015/04/first-aid-kit-icon-512x512-300x300.png" alt="KitUI logo" title="KitUI" align="center">  Kit UI
 ------------
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Infernus101/KitUI.svg)](http://isitmaintained.com/project/Infernus101/KitUI "Average time to resolve an issue")
 [![license](https://img.shields.io/github/license/Infernus101/KitUI.svg)](http://github.com/Infernus101/KitUI/blob/master/LICENSE "License")
@@ -9,6 +8,7 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 (No Plugin library or Virion required! Easy as pie!)
 
 [![Poggit-CI](https://poggit.pmmp.io/ci.shield/Infernus101/KitUI/KitUI)](https://poggit.pmmp.io/ci/Infernus101/KitUI/KitUI)
+[![](https://poggit.pmmp.io/shield.dl.total/KitUI)](https://poggit.pmmp.io/p/KitUI)
 
 [Get the latest KitUI artifacts (PHAR file) here](https://poggit.pmmp.io/ci/Infernus101/KitUI/KitUI)
 
