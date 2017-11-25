@@ -22,7 +22,7 @@ class LangManager{
 			"mainmenu-content" => "Select a kit for info -",
 			"select-option" => "Do you wanna select this kit, player?",
             "selected-kit" => "Selected kit: {%0}",
-            "inv-full" => "> Some of the items were not added to your inventory since your inventory got full!",
+            "inv-full" => "You do not have enough space in your inventory for this kit",
             "cant-afford" => "You cannot afford kit: {%0} Cost: {%1}",
             "one-per-life" => "You can only get one kit per life",
             "timer1" => "Kit {%0} is in cooldown at the moment",
