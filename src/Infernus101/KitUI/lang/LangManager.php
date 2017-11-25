@@ -25,6 +25,7 @@ class LangManager{
             "inv-full" => "You do not have enough space in your inventory for this kit",
             "cant-afford" => "You cannot afford kit: {%0} Cost: {%1}",
             "one-per-life" => "You can only get one kit per life",
+            "no-sign-perm" => "You don't have permission to create kit sign",
             "timer1" => "Kit {%0} is in cooldown at the moment",
             "timer2" => "You will be able to get it in {%0}",
             "noperm" => "You don't have the permission to use kit {%0}",

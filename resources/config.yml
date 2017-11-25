@@ -7,4 +7,6 @@ reset-on-logout: true
 start-from-first: false
 # Clears player inventory before adding the kit
 clear-inventory: false
+# Text on sign for kit form (case-insensitive)
+text-on-sign: "[KitUI]"
 ...
