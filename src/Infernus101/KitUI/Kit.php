@@ -38,37 +38,34 @@ class Kit{
         return $this->name;
     }
 
-	public function isInventoryFull(Player $player){
-		$full = true;
-		for($i = 0; $i < $player->getInventory()->getSize(); $i++){
-			if($player->getInventory()->getItem($i)->getId() === 0){
-			$full = false;
-			}
-		}
-		return $full;
-    }
-
     public function add(Player $player){
         $inv = $player->getInventory();
-		$flag = false;
-
+		
+		if($this->pl->config->get("clear-inventory")){
+			$inv->clearAll();
+			$player->getCraftingGrid()->clearAll();
+		}
+		
+		if(!$this->pl->config->get("start-from-first")){
+			if(count($this->data["items"]) + count($inv->getContents()) > $inv->getSize()){
+				$player->sendMessage($this->pl->language->getTranslation("inv-full"));
+				return;
+			}
+			foreach($this->data["items"] as $itemString){
+				$inv->setItem($inv->firstEmpty(), $i = $this->loadItem(...explode(":", $itemString)));
+			}
+		}
+		else{
+			$tag = 0;
+			foreach($this->data["items"] as $itemString){
+				$inv->setItem($tag++, $i = $this->loadItem(...explode(":", $itemString)));
+			}
+		}
+		
 		isset($this->data["helmet"]) and $inv->setHelmet($this->loadItem(...explode(":", $this->data["helmet"])));
         isset($this->data["chestplate"]) and $inv->setChestplate($this->loadItem(...explode(":", $this->data["chestplate"])));
         isset($this->data["leggings"]) and $inv->setLeggings($this->loadItem(...explode(":", $this->data["leggings"])));
         isset($this->data["boots"]) and $inv->setBoots($this->loadItem(...explode(":", $this->data["boots"])));
-
-        foreach($this->data["items"] as $itemString){
-			if(!$this->isInventoryFull($player)){
-            $inv->setItem($inv->firstEmpty(), $i = $this->loadItem(...explode(":", $itemString)));
-			}
-			else{
-			$flag = true;
-			}
-        }
-
-		if($flag == true){
-			$player->sendMessage($this->pl->language->getTranslation("inv-full"));
-		}
 
         if(isset($this->data["effects"])){
             foreach($this->data["effects"] as $effectString){
@@ -89,7 +86,7 @@ class Kit{
             $this->timers[strtolower($player->getName())] = $this->timer;
         }
 
-        $this->pl->hasKit[strtolower($player->getName())] = $this;
+        $this->pl->kitused[strtolower($player->getName())] = $this;
 
     }
 
