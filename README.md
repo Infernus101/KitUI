@@ -17,6 +17,7 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 
 ## Permissions
 - kit.command - Permission to use /kit
+- kit.sign - Permission to make kit sign.
 - kit.(kitname) - Permission to use kit specified after kit.
 
 ## Features
@@ -30,6 +31,7 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 - Custom Names for items in kit
 - Economy
 - Unlimited Kits
+- Kit UI sign
 
 ## About
 - Made by @Infernus101
