@@ -24,6 +24,7 @@ class Main extends PluginBase implements Listener {
   public $kitused = [];
   public $language;
   public $piggyEnchants;
+  public $config;
 	
     public function onEnable(){
       @mkdir($this->getDataFolder()."timer/");
