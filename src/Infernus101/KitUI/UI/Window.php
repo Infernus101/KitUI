@@ -11,8 +11,6 @@ abstract class Window {
 
 	protected $pl;
 	protected $player;
-	public static $kit;
-	public static $error;
 	public static $id = array();
 	
 	protected $data = [];
@@ -39,22 +37,6 @@ abstract class Window {
 	}
 	
 	public function navigate(int $menu, Player $player, Handler $windowHandler): void {
-		$packet = new ModalFormRequestPacket();
-		$packet->formId = $windowHandler->getWindowIdFor($menu);
-		$packet->formData = $windowHandler->getWindowJson($menu, $this->pl, $player);
-		$player->dataPacket($packet);
-	}
-	
-	public function navigateKit(int $menu, Player $player, Handler $windowHandler, $kit): void {
-		self::$kit = $kit;
-		$packet = new ModalFormRequestPacket();
-		$packet->formId = $windowHandler->getWindowIdFor($menu);
-		$packet->formData = $windowHandler->getWindowJson($menu, $this->pl, $player);
-		$player->dataPacket($packet);
-	}
-	
-	public function navigateError(int $menu, Player $player, Handler $windowHandler, $error): void {
-		self::$error = $error;
 		$packet = new ModalFormRequestPacket();
 		$packet->formId = $windowHandler->getWindowIdFor($menu);
 		$packet->formData = $windowHandler->getWindowJson($menu, $this->pl, $player);
