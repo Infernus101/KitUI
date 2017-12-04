@@ -28,7 +28,6 @@ class Main extends PluginBase implements Listener {
 	
     public function onEnable(){
       @mkdir($this->getDataFolder()."timer/");
-      $this->getServer()->getLogger()->notice(base64_decode('DQogICAgICAgIF9fX19fICAgICAgIF9fICAgICAgICAgICAgICAgICAgICAgICAgICAgX18gIF9fX19fICBfXyAgDQogICBfX19ffF8gICBffCAgICAgLyBffCAgICAgICAgICAgICAgICAgICAgICAgICAvICB8fCAgXyAgfC8gIHwgDQogIC8gX18gXCB8IHwgXyBfXyB8IHxfIF9fXyBfIF9fIF8gX18gIF8gICBfIF9fXyBgfCB8fCB8LycgfGB8IHwgDQogLyAvIF9gIHx8IHx8ICdfIFx8ICBfLyBfIFwgJ19ffCAnXyBcfCB8IHwgLyBfX3wgfCB8fCAgL3wgfCB8IHwgDQp8IHwgKF98IHx8IHx8IHwgfCB8IHx8ICBfXy8gfCAgfCB8IHwgfCB8X3wgXF9fIFxffCB8XCB8Xy8gL198IHxfDQogXCBcX18sX1xfX18vX3wgfF98X3wgXF9fX3xffCAgfF98IHxffFxfXyxffF9fXy9cX19fL1xfX18vIFxfX18vDQogIFxfX19fLyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgDQo='));
       $this->getServer()->getLogger()->notice("[KitUI] Enabled! - By Infernus101");
       $this->configFixer();
       $files = array("kits.yml","config.yml");
