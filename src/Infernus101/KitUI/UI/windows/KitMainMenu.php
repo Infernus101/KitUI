@@ -40,7 +40,7 @@ class KitMainMenu extends Window {
 		$windowHandler = new Handler();
 		if(isset(parent::$id[$index])) $this->pl->id[strtolower($this->player->getName())]["kit"] = parent::$id[$index];
 		else $this->pl->id[strtolower($this->player->getName())]["kit"] = null;
-		$this->navigateKit(Handler::KIT_INFO, $this->player, $windowHandler);
+		$this->navigate(Handler::KIT_INFO, $this->player, $windowHandler);
 		return true;
 	}
 }
