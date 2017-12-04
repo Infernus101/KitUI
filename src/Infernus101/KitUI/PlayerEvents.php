@@ -59,6 +59,7 @@ class PlayerEvents implements Listener {
         if($this->pl->config->get("reset-on-logout") and isset($this->pl->kitused[strtolower($event->getPlayer()->getName())])){
             unset($this->pl->kitused[strtolower($event->getPlayer()->getName())]);
         }
+	if(isset($this->pl->id[strtolower($event->getPlayer()->getName())])) unset($this->pl->id[strtolower($event->getPlayer()->getName())]);
     }
 	
 	public function onDataPacket(DataPacketReceiveEvent $event){

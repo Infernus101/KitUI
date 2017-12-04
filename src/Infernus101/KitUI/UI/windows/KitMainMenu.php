@@ -38,9 +38,9 @@ class KitMainMenu extends Window {
 	public function handle(ModalFormResponsePacket $packet): bool {
 		$index = (int) $packet->formData;
 		$windowHandler = new Handler();
-		if(isset(parent::$id[$index])) $kit = parent::$id[$index];
-		else $kit = null;
-		$this->navigateKit(Handler::KIT_INFO, $this->player, $windowHandler, $kit);
+		if(isset(parent::$id[$index])) $this->pl->id[strtolower($this->player->getName())]["kit"] = parent::$id[$index];
+		else $this->pl->id[strtolower($this->player->getName())]["kit"] = null;
+		$this->navigate(Handler::KIT_INFO, $this->player, $windowHandler);
 		return true;
 	}
 }

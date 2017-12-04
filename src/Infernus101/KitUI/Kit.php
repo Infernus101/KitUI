@@ -20,6 +20,7 @@ class Kit{
     public $cost = 0;
     public $timer;
     public $timers = [];
+    public $id = [];
 
     public function __construct(Main $pl, array $data, string $name){
         $this->pl = $pl;

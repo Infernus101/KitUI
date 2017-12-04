@@ -14,8 +14,14 @@ use onebone\economyapi\EconomyAPI;
 class KitInfo extends Window {
 	public function process(): void {
 		$info = "";
-		if(parent::$kit != null){
-			$kits = $this->pl->getKit(parent::$kit);
+		if(isset($this->pl->id[strtolower($this->player->getName())]["kit"])){
+			$kit = $this->pl->id[strtolower($this->player->getName())]["kit"];
+		}
+		else{
+			return;
+		}
+		if($kit != null){
+			$kits = $this->pl->getKit($kit);
 			if(isset($kits->data["info"])) $info = $kits->data["info"];
 		}
 		$title = $this->pl->language->getTranslation("select-option");
@@ -32,41 +38,50 @@ class KitInfo extends Window {
 		$windowHandler = new Handler();
 		switch($index){
 			case "true\n":
-			if(parent::$kit == null){
+			if(isset($this->pl->id[strtolower($this->player->getName())]["kit"])){
+			$kit = $this->pl->id[strtolower($this->player->getName())]["kit"];
+			}
+			if($kit == null){
 				$error = "Wrong Session! Try again!";
-				$this->navigateError(Handler::KIT_ERROR, $this->player, $windowHandler, $error);
+				$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
+				$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
 				break;
 			}
-				$kits = $this->pl->getKit(parent::$kit);
+			$kits = $this->pl->getKit($kit);
 			if($kits != null){
 				$name = $kits->getName();
 			}else{
 				$error = "Kit not found! Try again!";
-				$this->navigateError(Handler::KIT_ERROR, $this->player, $windowHandler, $error);
+				$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
+				$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
 				break;
 			}
 			if(!$kits->testPermission($this->player)){
 				$error = $this->pl->language->getTranslation("noperm", $name);
-				$this->navigateError(Handler::KIT_ERROR, $this->player, $windowHandler, $error);
+				$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
+				$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
 				break;
 			}
 			if(isset($kits->timers[strtolower($this->player->getName())])){
 				$left = $kits->getTimerLeft($this->player);
 				$error = $this->pl->language->getTranslation("timer1", $name) . "\n" . $this->pl->language->getTranslation("timer2", $left);
-				$this->navigateError(Handler::KIT_ERROR, $this->player, $windowHandler, $error);
+				$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
+				$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
 				break;
 			}
 			if(isset($kits->data["money"])){
 				$money = $kits->data["money"];
 				if(EconomyAPI::getInstance()->reduceMoney($this->player, $money) === EconomyAPI::RET_INVALID){
 					$error = $this->pl->language->getTranslation("cant-afford", $name, $money);
-					$this->navigateError(Handler::KIT_ERROR, $this->player, $windowHandler, $error);
+					$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
+					$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
 					break;
 				}
 			}
 			if(($this->pl->config->get("one-kit-per-life")) and (isset($kits->pl->kitused[strtolower($this->player->getName())]))){
 				$error = $this->pl->language->getTranslation("one-per-life");
-				$this->navigateError(Handler::KIT_ERROR, $this->player, $windowHandler, $error);
+				$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
+				$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
 				break;
 			}
 			$kits->add($this->player);

@@ -12,11 +12,17 @@ use pocketmine\Player;
 
 class KitError extends Window {
 	public function process(): void {
+		if(isset($this->pl->id[strtolower($this->player->getName())]["error"])){
+			$error = $this->pl->id[strtolower($this->player->getName())]["error"];
+		}
+		else{
+			return;
+		}
 			$title = $this->pl->language->getTranslation("error-title");
 			$this->data = [
 				"type" => "modal",
 				"title" => $title,
-				"content" => parent::$error,
+				"content" => $error,
 				"button1" => "Go Back",
 				"button2" => "Exit"
 			];
