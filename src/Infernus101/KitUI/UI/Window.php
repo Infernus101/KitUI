@@ -20,6 +20,9 @@ abstract class Window {
 	public function __construct(Main $pl, Player $player) {
 		$this->pl = $pl;
 		$this->player = $player;
+		if(!isset($pl->id[strtolower($player->getName())])){
+			$pl->id[strtolower($player->getName())] = [];
+		}
 		$this->process();
 	}
 
