@@ -61,11 +61,11 @@ testkit2:
   effects:
   - "speed:120:2"
 
-  money: 50
+  money: 250
   
   image-url: ""
 
-  info: "This kit is too op XD Cost: 50$"
+  info: "Kit 2! Cost: 250$"
   
 testkit3:
 
@@ -87,9 +87,9 @@ testkit3:
   effects:
   - "speed:120:2"
 
-  money: 50
+  money: 150
   
   image-url: ""
 
-  info: "This kit is too op XD Cost: 50$"
+  info: "Kit 3! Cost: 150$"
 ...
