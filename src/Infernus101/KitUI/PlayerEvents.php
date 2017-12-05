@@ -65,12 +65,15 @@ class PlayerEvents implements Listener {
 	public function onDataPacket(DataPacketReceiveEvent $event){
 		$packet = $event->getPacket();
 		if($packet instanceof ModalFormResponsePacket) {
-			if(json_decode($packet->formData, true) === null) {
-				return;
-			}
 			$windowHandler = new Handler();
 			$formId = $windowHandler->getWindowIdFor($packet->formId);
 			if(!$windowHandler->isInRange($formId)) {
+				return;
+			}
+			if(json_decode($packet->formData, true) === null) {
+				return;
+			}
+			if(!isset($this->pl->id[strtolower($event->getPlayer()->getName())])){
 				return;
 			}
 			$window = $windowHandler->getWindow($formId, $this->pl, $event->getPlayer());
@@ -78,3 +81,4 @@ class PlayerEvents implements Listener {
 		}
 	}
 }
+
