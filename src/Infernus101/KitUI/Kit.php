@@ -101,7 +101,7 @@ class Kit{
             if($key % 2 === 0){ //Name expected
                 $ench = Enchantment::getEnchantmentByName((string) $name_level);
                 if($ench === null){
-                    $ench = CustomEnchants::getEnchantByName((string) $name_level);
+                    $ench = CustomEnchants::getEnchantmentByName((string) $name_level);
                 }
             }elseif($ench !== null){
                 if($this->pl->piggyEnchants !== null && $ench instanceof CustomEnchants){
