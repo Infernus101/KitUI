@@ -6,7 +6,6 @@ use Infernus101\KitUI\UI\Handler;
 use Infernus101\KitUI\lang\LangManager;
 use Infernus101\KitUI\tasks\CoolDownTask;
 use pocketmine\Player;
-use pocketmine\item\enchantment\Enchantment;
 use pocketmine\Server;
 use pocketmine\command\CommandSender;
 use pocketmine\command\ConsoleCommandSender;
@@ -42,12 +41,6 @@ class Main extends PluginBase implements Listener {
       $this->language = new LangManager($this);
       $this->getServer()->getPluginManager()->registerEvents(new PlayerEvents($this), $this);
       $this->getServer()->getScheduler()->scheduleDelayedRepeatingTask(new CoolDownTask($this), 1200, 1200);
-        if(Enchantment::getEnchantmentByName("KNOCKBACK") === null){
-            Enchantment::registerEnchantment(new Enchantment(Enchantment::KNOCKBACK, "%enchantment.knockback", Enchantment::RARITY_COMMON, Enchantment::ACTIVATION_SELF, Enchantment::SLOT_NONE));
-        }
-        if(Enchantment::getEnchantmentByName("SHARPNESS") === null){
-            Enchantment::registerEnchantment(new Enchantment(Enchantment::SHARPNESS, "%enchantment.sharpness", Enchantment::RARITY_COMMON, Enchantment::ACTIVATION_SELF, Enchantment::SLOT_NONE));
-        }
       $this->piggyEnchants = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
 	if($this->piggyEnchants !== null){
             $this->getServer()->getLogger()->info(TextFormat::GREEN . "[KitUI] Using PiggyCustomEnchants!");
