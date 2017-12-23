@@ -5,6 +5,7 @@ namespace Infernus101\KitUI;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\entity\Effect;
 use pocketmine\item\enchantment\Enchantment;
+use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\Item;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
@@ -107,7 +108,7 @@ class Kit{
                 if($this->pl->piggyEnchants !== null && $ench instanceof CustomEnchants){
                     $this->pl->piggyEnchants->addEnchantment($item, $ench->getName(), (int) $name_level);
                 }else{
-                    $item->addEnchantment($ench->setLevel((int) $name_level));
+                    $item->addEnchantment(new EnchantmentInstance($ench, (int) $name_level));
                 }
             }
         }
