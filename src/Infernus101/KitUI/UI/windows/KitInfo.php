@@ -62,6 +62,14 @@ class KitInfo extends Window {
 				$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
 				break;
 			}
+			if(isset($kits->data["money"])){
+				if(EconomyAPI::getInstance()->myMoney($this->player) < $kits->data["money"]){
+					$error = $this->pl->language->getTranslation("cant-afford", $name, $money);
+					$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
+					$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
+					break;
+				}
+			}
 			if(isset($kits->timers[strtolower($this->player->getName())])){
 				$left = $kits->getTimerLeft($this->player);
 				$error = $this->pl->language->getTranslation("timer1", $name) . "\n" . $this->pl->language->getTranslation("timer2", $left);
