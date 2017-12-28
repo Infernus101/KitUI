@@ -9,7 +9,7 @@ use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\Item;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
-
+use onebone\economyapi\EconomyAPI;
 use PiggyCustomEnchants\CustomEnchants\CustomEnchants;
 use pocketmine\Server;
 
@@ -64,7 +64,7 @@ class Kit{
 			}
 		}
 		
-		isset($this->data["helmet"]) and $inv->setHelmet($this->loadItem(...explode(":", $this->data["helmet"])));
+	isset($this->data["helmet"]) and $inv->setHelmet($this->loadItem(...explode(":", $this->data["helmet"])));
         isset($this->data["chestplate"]) and $inv->setChestplate($this->loadItem(...explode(":", $this->data["chestplate"])));
         isset($this->data["leggings"]) and $inv->setLeggings($this->loadItem(...explode(":", $this->data["leggings"])));
         isset($this->data["boots"]) and $inv->setBoots($this->loadItem(...explode(":", $this->data["boots"])));
@@ -87,7 +87,9 @@ class Kit{
         if($this->timer){
             $this->timers[strtolower($player->getName())] = $this->timer;
         }
-
+    	if(isset($this->data["money"])){
+	    EconomyAPI::getInstance()->reduceMoney($player, $this->data["money"]);
+	}
         $this->pl->kitused[strtolower($player->getName())] = $this;
 
     }
