@@ -39,9 +39,9 @@ class Handler {
 	}
 
 	public function getWindowIdFor(int $windowId): int {
-		if($windowId >= 3200) {
-			return $windowId - 3200;
+		if($windowId >= 10100) {
+			return $windowId - 10100;
 		}
-		return 3200 + $windowId;
+		return 10100 + $windowId;
 	}
 }
