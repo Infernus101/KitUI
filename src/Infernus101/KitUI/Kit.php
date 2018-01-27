@@ -42,6 +42,7 @@ class Kit{
 
     public function add(Player $player){
         $inv = $player->getInventory();
+	$arm = $player->getArmorInventory();
 		
 		if($this->pl->config->get("clear-inventory")){
 			$inv->clearAll();
@@ -64,10 +65,10 @@ class Kit{
 			}
 		}
 		
-	isset($this->data["helmet"]) and $inv->setHelmet($this->loadItem(...explode(":", $this->data["helmet"])));
-        isset($this->data["chestplate"]) and $inv->setChestplate($this->loadItem(...explode(":", $this->data["chestplate"])));
-        isset($this->data["leggings"]) and $inv->setLeggings($this->loadItem(...explode(":", $this->data["leggings"])));
-        isset($this->data["boots"]) and $inv->setBoots($this->loadItem(...explode(":", $this->data["boots"])));
+	isset($this->data["helmet"]) and $arm->setHelmet($this->loadItem(...explode(":", $this->data["helmet"])));
+        isset($this->data["chestplate"]) and $arm->setChestplate($this->loadItem(...explode(":", $this->data["chestplate"])));
+        isset($this->data["leggings"]) and $arm->setLeggings($this->loadItem(...explode(":", $this->data["leggings"])));
+        isset($this->data["boots"]) and $arm->setBoots($this->loadItem(...explode(":", $this->data["boots"])));
 
         if(isset($this->data["effects"])){
             foreach($this->data["effects"] as $effectString){
