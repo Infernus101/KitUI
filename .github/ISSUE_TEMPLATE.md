@@ -16,6 +16,7 @@
 <!-- CLIENT INFORMATION - what is the plugin version, PHP version, and server build you're running? -->
 ## Client information
 PocketMine-MP Version: (insert commit hash here)
+Kit-UI Version: (insert commit hash or version from plugin.yml here)
 MCPE Version: (insert game version here)
 Plugin Version: (insert commit hash here)
 PHP version: 7.2
