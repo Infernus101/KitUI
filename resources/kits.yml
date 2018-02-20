@@ -92,4 +92,36 @@ testkit3:
   image-url: ""
 
   info: "Kit 3! Cost: 150$"
+  
+#Copy and paste this template delete any #
+
+ # replace with name of kit: 
+
+ # items:   
+ # -
+ # -
+ # -
+ # -
+ # -
+ # helmet: 
+ # chestplate: 
+ # leggings: 
+ # boots: 
+
+ # commands:
+ # - "tell {player} Kit (replace this with name of kit even the parentheses) claimed!"
+
+ # cooldown:
+ #   hours: 24
+ #   minutes: 30
+
+ # effects:
+ # - "speed:120:2"
+
+ # money: replace this with the kit cost put 0 if it does not cost any money
+  
+ # image-url: "REPLACE THIS WITH A LINK to A IMAGE THAT YOU WANT TO USE IN THE UI FOR THE KIT" 
+
+ # info: "Replace this with info about the kit"
+  
 ...
