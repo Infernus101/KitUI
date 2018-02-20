@@ -43,7 +43,10 @@ class Kit{
     public function add(Player $player){
         $inv = $player->getInventory();
 	$arm = $player->getArmorInventory();
-        $player->removeAllEffects();
+
+        if($this->pl->config->get("clear-effect")){
+            $player->removeAllEffects();
+        }
 		
 		if($this->pl->config->get("clear-inventory")){
 			$inv->clearAll();
