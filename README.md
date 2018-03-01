@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/github/license/Infernus101/KitUI.svg)](http://github.com/Infernus101/KitUI/blob/master/LICENSE "License")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/Infernus101/KitUI.svg)](http://isitmaintained.com/project/Infernus101/KitUI "Percentage of issues still open")
 -------------
-Select kits from a form! Just do /kit and get kits info and select it if available! For MCBE! PMMP support only!
+Select kits from a form! Just do /kit and get kits info and select it if available! For MCPE! PMMP support only!
 (No Plugin library or Virion required! Easy as pie!)
 
 [![Poggit-CI](https://poggit.pmmp.io/ci.shield/Infernus101/KitUI/KitUI)](https://poggit.pmmp.io/ci/Infernus101/KitUI/KitUI)
