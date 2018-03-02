@@ -1,5 +1,6 @@
 ---
 testkit:
+  name-kit: "Test Kit"
   # Format: "id:damage:count:name:ench_name:ench_level"
 
   # If you want only custom name (no enchantments): "id:damage:count:name"
@@ -42,7 +43,7 @@ testkit:
   # Info to show when selected a Kit in UI form
   info: "This kit is too op XD Cost: 50$"
 testkit2:
-
+  name-kit: "Test Kit 2"
   items:
   - "260:0:10"
   - "267:0:1:Sword Name:sharpness:3:knockback:1"
@@ -68,7 +69,7 @@ testkit2:
   info: "Kit 2! Cost: 250$"
   
 testkit3:
-
+  name-kit: "Test kit 3"
   items:
   - "260:0:10"
   - "267:0:1:Sword Name:sharpness:3:knockback:1"
