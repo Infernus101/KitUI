@@ -27,9 +27,10 @@ class KitMainMenu extends Window {
 			$kits = $this->pl->getKit($name);
 			if(isset($kits->data["image-url"])){
 			$url = $kits->data["image-url"];
-			$this->data["buttons"][] = ["text" => "$name", "image" => ["type" => "url", "data" => $url]];
+			$name2 = $kits->data["name-kit"];
+			$this->data["buttons"][] = ["text" => "$name2", "image" => ["type" => "url", "data" => $url]];
 			}else{
-			$this->data["buttons"][] = ["text" => "$name"];	
+			$this->data["buttons"][] = ["text" => "$name2"];	
 			}
 			array_push(parent::$id, "$name");
 		}
