@@ -41,7 +41,13 @@ class Main extends PluginBase implements Listener {
       $this->language = new LangManager($this);
       $this->getServer()->getPluginManager()->registerEvents(new PlayerEvents($this), $this);
       $this->getServer()->getScheduler()->scheduleDelayedRepeatingTask(new CoolDownTask($this), 1200, 1200);
-      $this->piggyEnchants = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
+        if ($this->getServer()->getPluginManager()->getPlugin("EconomyAPI") === null) {
+            $this->getLogger()->critical('Please install EconomyAPI ... The plugin is stopped ...');
+            $this->getServer()->getPluginManager()->disablePlugin($this);
+        } else {
+            $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
+	}      
+	$this->piggyEnchants = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
 	if($this->piggyEnchants !== null){
             $this->getServer()->getLogger()->info(TextFormat::GREEN . "[KitUI] Using PiggyCustomEnchants!");
         }
