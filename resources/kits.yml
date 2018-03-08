@@ -31,6 +31,9 @@ testkit:
   # Time is in seconds
   effects:
   - "speed:120:2"
+  
+  #Kit name to show on the menu, you can use color symbol '§'
+  kit-name: "§ftest"
 
   # Add a cost for the kit. Compatible with EconomyAPI only
   # Put 0 if you want the kit to be free
@@ -60,6 +63,8 @@ testkit2:
 
   effects:
   - "speed:120:2"
+  
+  kit-name: "§ctest2"
 
   money: 250
   
@@ -86,6 +91,8 @@ testkit3:
 
   effects:
   - "speed:120:2"
+
+  kit-name: "§6test3"
 
   money: 150
   
