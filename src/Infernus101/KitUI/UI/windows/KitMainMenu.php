@@ -26,12 +26,12 @@ class KitMainMenu extends Window {
 			$name = ucfirst($name);
 			$kits = $this->pl->getKit($name);
 			if(isset($kits->data["kit-name"]))	
-				$name = $kits->data["kit-name"];
+				$name2 = $kits->data["kit-name"];
 			if(isset($kits->data["image-url"])){
 			$url = $kits->data["image-url"];
-			$this->data["buttons"][] = ["text" => "$name", "image" => ["type" => "url", "data" => $url]];
+			$this->data["buttons"][] = ["text" => "$name2", "image" => ["type" => "url", "data" => $url]];
 			}else{
-			$this->data["buttons"][] = ["text" => "$name"];	
+			$this->data["buttons"][] = ["text" => "$name2"];	
 			}
 			array_push(parent::$id, "$name");
 		}
