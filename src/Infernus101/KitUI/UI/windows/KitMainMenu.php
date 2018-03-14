@@ -24,6 +24,7 @@ class KitMainMenu extends Window {
 		];
 		foreach($this->pl->kits as $name => $data){
 			$name = ucfirst($name);
+			$name2 = $name;
 			$kits = $this->pl->getKit($name);
 			if(isset($kits->data["kit-name"]))	
 				$name2 = $kits->data["kit-name"];
