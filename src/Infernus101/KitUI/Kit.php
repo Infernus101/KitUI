@@ -4,6 +4,7 @@ namespace Infernus101\KitUI;
 
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\entity\Effect;
+use pocketmine\entity\EffectInstance;
 use pocketmine\item\enchantment\Enchantment;
 use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\Item;
@@ -124,11 +125,7 @@ class Kit{
     }
 
     public function loadEffect(string $name = "INVALID", int $seconds = 60, int $amplifier = 1){
-        $e = Effect::getEffectByName($name);
-        if($e !== null){
-            return $e->setDuration($seconds * 20)->setAmplifier($amplifier);
-        }
-        return null;
+        return new EffectInstance(Effect::getEffectByName($name), $seconds * 20, $amplifier);
     }
 
     public function getTimerMinutes() : int{
