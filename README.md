@@ -19,6 +19,7 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 - kit.command - Permission to use /kit
 - kit.sign - Permission to make kit sign.
 - kit.(kitname) - Permission to use kit specified after kit.
+- kit.freepass.(kitname) - Permission to free pass specified kit cooldown and one-kit-per-life check.
 
 ## Features
 - Easy config
