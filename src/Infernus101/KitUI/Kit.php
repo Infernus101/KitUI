@@ -90,10 +90,11 @@ class Kit{
                 $this->pl->getServer()->dispatchCommand(new ConsoleCommandSender(), str_replace("{player}", $player->getName(), $cmd));
             }
         }
-
-        if($this->timer){
-            $this->timers[strtolower($player->getName())] = $this->timer;
-        }
+	if(!$this->player->hasPermission("kit.freepass.".strtolower($this->name))){
+	    if($this->timer){
+                $this->timers[strtolower($player->getName())] = $this->timer;
+	    }
+	}
     	if(isset($this->data["money"])){
 	    EconomyAPI::getInstance()->reduceMoney($player, $this->data["money"]);
 	}
