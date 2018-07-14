@@ -71,14 +71,14 @@ class KitInfo extends Window {
 					break;
 				}
 			}
-			if(isset($kits->timers[strtolower($this->player->getName())])){
+			if(isset($kits->timers[strtolower($this->player->getName())]) and !$this->player->hasPermission("kit.freepass")){
 				$left = $kits->getTimerLeft($this->player);
 				$error = $this->pl->language->getTranslation("timer1", $name) . "\n" . $this->pl->language->getTranslation("timer2", $left);
 				$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
 				$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
 				break;
 			}
-			if(($this->pl->config->get("one-kit-per-life")) and (isset($kits->pl->kitused[strtolower($this->player->getName())]))){
+			if(($this->pl->config->get("one-kit-per-life")) and (isset($kits->pl->kitused[strtolower($this->player->getName())])) and !$this->player->hasPermission("kit.freepass")){
 				$error = $this->pl->language->getTranslation("one-per-life");
 				$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
 				$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
