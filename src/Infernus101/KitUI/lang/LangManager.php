@@ -28,7 +28,7 @@ class LangManager{
             "no-sign-perm" => "You don't have permission to create kit sign",
             "timer1" => "Kit {%0} is in cooldown at the moment",
             "timer2" => "You will be able to get it in {%0}",
-            "noperm" => "You don't have the permission to use kit {%0}",
+            "noperm" => "You don't have the permission to use kit {%0}. For kits above Voter you'll need to buy the specified rank: https://store.primegames.in/",
             "timer-format1" => "{%0} minutes",
             "timer-format2" => "{%0} hours and {%1} minutes",
             "timer-format3" => "{%0} hours",
