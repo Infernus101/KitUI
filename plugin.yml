@@ -10,6 +10,9 @@ permissions: # kit permissions - kit.<kit name>
  kit.sign:
    description: kit sign!
    default: false
+ kit.freepass:
+   description: kit cooldown freepass!
+   default: false
 commands:
   kit:
     description: Kit UI!
