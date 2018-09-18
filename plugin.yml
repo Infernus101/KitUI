@@ -2,13 +2,16 @@ name: KitUI
 author: Infernus101
 api: [3.0.0]
 main: Infernus101\KitUI\Main
-version: 1.3.0
+version: 1.3.1
 permissions: # kit permissions - kit.<kit name>
  kit.command:
   description: kit command!
   default: true
  kit.sign:
    description: kit sign!
+   default: false
+ kit.freepass:
+   description: kit cooldown freepass!
    default: false
 commands:
   kit:
