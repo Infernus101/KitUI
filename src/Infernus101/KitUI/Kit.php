@@ -90,7 +90,7 @@ class Kit{
                 $this->pl->getServer()->dispatchCommand(new ConsoleCommandSender(), str_replace("{player}", $player->getName(), $cmd));
             }
         }
-	if(!$this->player->hasPermission("kit.freepass.".strtolower($this->name))){
+	if(!$player->hasPermission("kit.freepass)){
 	    if($this->timer){
                 $this->timers[strtolower($player->getName())] = $this->timer;
 	    }
