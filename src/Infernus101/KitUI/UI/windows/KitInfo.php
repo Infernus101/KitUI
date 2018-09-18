@@ -71,7 +71,7 @@ class KitInfo extends Window {
 					break;
 				}
 			}
-			if(isset($kits->timers[strtolower($this->player->getName())]) and !$this->player->hasPermission("kit.freepass.".strtolower($name))){
+			if(isset($kits->timers[strtolower($this->player->getName())]) and !$this->player->hasPermission("kit.freepass")){
 				$left = $kits->getTimerLeft($this->player);
 				$error = $this->pl->language->getTranslation("timer1", $name) . "\n" . $this->pl->language->getTranslation("timer2", $left);
 				$this->pl->id[strtolower($this->player->getName())]["error"] = $error;
