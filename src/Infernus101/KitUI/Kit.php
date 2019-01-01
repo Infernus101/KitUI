@@ -11,7 +11,7 @@ use pocketmine\item\Item;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
 use onebone\economyapi\EconomyAPI;
-use PiggyCustomEnchants\CustomEnchants\CustomEnchants;
+use DaPigGuy\PiggyCustomEnchants\CustomEnchants\CustomEnchants;
 use pocketmine\Server;
 
 class Kit{
