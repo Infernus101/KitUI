@@ -35,6 +35,9 @@ class Kit{
         if(isset($this->data["money"]) and $this->data["money"] != 0){
             $this->cost = (int) $this->data["money"];
         }
+	if(!isset($this->data["permission"])){
+            $this->data["permission"] = "kit." . $this->name;
+        }
     }
 
     public function getName() : string{
