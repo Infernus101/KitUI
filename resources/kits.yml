@@ -44,6 +44,9 @@ testkit:
 
   # Info to show when selected a Kit in UI form
   info: "This kit is too op XD Cost: 50$"
+  
+  # Custom Kit perms, CaSe sEnSiTiVe
+  permission: "kit.testkit"
 testkit2:
 
   items:
@@ -72,6 +75,8 @@ testkit2:
 
   info: "Kit 2! Cost: 250$"
   
+  permission: "kit.testkit2"
+  
 testkit3:
 
   items:
@@ -99,4 +104,6 @@ testkit3:
   image-url: ""
 
   info: "Kit 3! Cost: 150$"
+  
+  permission: "kit.testkit3"
 ...

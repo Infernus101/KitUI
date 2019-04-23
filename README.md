@@ -18,7 +18,7 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 ## Permissions
 - kit.command - Permission to use /kit
 - kit.sign - Permission to make kit sign.
-- kit.(kitname) - Permission to use kit specified after kit.
+- Custom Kit permissions - You can edit kits.yml to change permission for every kit, default is kit.(kitname).
 - kit.freepass - Permission to free pass any kit cooldown and one-kit-per-life check.
 
 ## Features

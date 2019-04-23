@@ -35,6 +35,9 @@ class Kit{
         if(isset($this->data["money"]) and $this->data["money"] != 0){
             $this->cost = (int) $this->data["money"];
         }
+	if(!isset($this->data["permission"])){
+            $this->data["permission"] = "kit." . $this->name;
+        }
     }
 
     public function getName() : string{
@@ -160,7 +163,7 @@ class Kit{
     }
 
     public function testPermission(Player $player) : bool{
-        return $player->hasPermission("kit.".strtolower($this->name)) or $player->hasPermission("kit.".$this->name);
+        return $player->hasPermission($this->data["permission"]);
     }
 
     public function save(){
