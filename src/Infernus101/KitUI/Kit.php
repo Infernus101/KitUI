@@ -160,7 +160,7 @@ class Kit{
     }
 
     public function testPermission(Player $player) : bool{
-        return $player->hasPermission("kit.".strtolower($this->name)) or $player->hasPermission("kit.".$this->name);
+        return $player->hasPermission($this->data["permission"]);
     }
 
     public function save(){
