@@ -38,5 +38,6 @@ Select kits from a form! Just do /kit and get kits info and select it if availab
 - Made by @Infernus101
 - Github - http://github.com/Infernus101
 - Twitter - http://twitter.com/Infernus101
+- Discord - @Infernus#9511
 - Email - infernusmcpe@gmail.com
 - Server - Fallentech.tk 19132 | Countertech.tk 19132
