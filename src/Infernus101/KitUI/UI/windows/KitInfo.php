@@ -90,8 +90,8 @@ class KitInfo extends Window {
 					$this->navigate(Handler::KIT_ERROR, $this->player, $windowHandler);
 					break;
 				}
-				$kits->add($this->player);
-				$this->player->sendMessage($this->pl->language->getTranslation("selected-kit", $name));
+				/** @noinspection PhpUnhandledExceptionInspection */
+				$kits->equipKit($this->player);
 				break;
 			case "false\n":
 				$this->navigate(Handler::KIT_MAIN_MENU, $this->player, $windowHandler);

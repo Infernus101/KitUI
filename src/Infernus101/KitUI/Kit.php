@@ -2,6 +2,8 @@
 
 namespace Infernus101\KitUI;
 
+use Infernus101\KitUI\events\KitEquipEvent;
+use Infernus101\KitUI\events\KitPurchaseEvent;
 use onebone\economyapi\EconomyAPI;
 use PiggyCustomEnchants\CustomEnchants\CustomEnchants;
 use pocketmine\command\ConsoleCommandSender;
@@ -54,9 +56,40 @@ class Kit {
 		return $this->name;
 	}
 
+	/**
+	 * @param Player $player
+	 * @throws \ReflectionException
+	 */
+	public function equipKit(Player $player){
+		$event = new KitEquipEvent($player, $this);
+		$event->call();
+
+		if($event->isCancelled()){
+			return;
+		}
+
+		$this->add($player);
+	}
+
+	/**
+	 * @param Player $player
+	 * @throws \ReflectionException
+	 */
 	public function add(Player $player){
 		$inv = $player->getInventory();
 		$arm = $player->getArmorInventory();
+
+		if(isset($this->data["money"])){
+			$event = new KitPurchaseEvent($player, $this, $this->data["money"]);
+			$event->call();
+
+			if($event->isCancelled()){
+				goto skipPurchase;
+			}
+
+			EconomyAPI::getInstance()->reduceMoney($player, $event->getPrice());
+		}
+		skipPurchase:
 
 		if($this->pl->config->get("clear-effect")){
 			$player->removeAllEffects();
@@ -108,11 +141,9 @@ class Kit {
 				$this->timers[strtolower($player->getName())] = $this->timer;
 			}
 		}
-		if(isset($this->data["money"])){
-			EconomyAPI::getInstance()->reduceMoney($player, $this->data["money"]);
-		}
-		$this->pl->kitUsed[strtolower($player->getName())] = $this;
 
+		$this->pl->kitUsed[strtolower($player->getName())] = $this;
+		$player->sendMessage($this->pl->language->getTranslation("selected-kit", $this->getName()));
 	}
 
 	public function loadItem(int $id = 0, int $damage = 0, int $count = 1, string $name = "default", ...$enchantments): Item{
