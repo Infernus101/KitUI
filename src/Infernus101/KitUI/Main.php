@@ -33,7 +33,6 @@ class Main extends PluginBase implements Listener {
 
 	public function onEnable(){
 		@mkdir($this->getDataFolder() . "timer/");
-		$this->getServer()->getLogger()->notice("[KitUI] Enabled! - By Infernus101");
 		$this->configFixer();
 		$files = ["kits.yml", "config.yml"];
 		foreach($files as $file){
@@ -48,9 +47,6 @@ class Main extends PluginBase implements Listener {
 		$this->getServer()->getPluginManager()->registerEvents(new PlayerEvents($this), $this);
 		$this->getScheduler()->scheduleDelayedRepeatingTask(new CoolDownTask($this), 1200, 1200);
 		$this->piggyEnchants = $this->getServer()->getPluginManager()->getPlugin("PiggyCustomEnchants");
-		if($this->piggyEnchants !== null){
-			$this->getServer()->getLogger()->info(TextFormat::GREEN . "[KitUI] Using PiggyCustomEnchants!");
-		}
 		$allKits = yaml_parse_file($this->getDataFolder() . "kits.yml");
 		foreach($allKits as $name => $data){
 			$this->kits[$name] = new Kit($this, $data, $name);
@@ -83,7 +79,6 @@ class Main extends PluginBase implements Listener {
 		foreach($this->kits as $kit){
 			$kit->save();
 		}
-		$this->getServer()->getLogger()->notice("[KitUI] Disabled! - By Infernus101");
 	}
 
 	public function onCommand(CommandSender $sender, Command $cmd, String $label, array $args): bool{
