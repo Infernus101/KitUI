@@ -95,7 +95,7 @@ class Main extends PluginBase implements Listener {
 					return false;
 				}
 				if(isset($args[0])){
-					$sender->sendMessage(TextFormat::GREEN . "About:\nKit UI by Infernus101! github.com/Infernus101/KitUI\n" . TextFormat::AQUA . "Servers - FallenTech.tk | CounterTech.tk 19132");
+					$sender->sendMessage(TextFormat::GREEN . "About:\nKit UI by Infernus101! github.com/Infernus101/KitUI\n" . TextFormat::BLUE . "Servers - FallenTech.tk 19132");
 
 					return false;
 				}
