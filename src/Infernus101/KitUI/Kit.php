@@ -5,7 +5,7 @@ namespace Infernus101\KitUI;
 use Infernus101\KitUI\events\KitEquipEvent;
 use Infernus101\KitUI\events\KitPurchaseEvent;
 use onebone\economyapi\EconomyAPI;
-use PiggyCustomEnchants\CustomEnchants\CustomEnchants;
+use DaPigGuy\PiggyCustomEnchants\CustomEnchants\CustomEnchants;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\entity\Effect;
 use pocketmine\entity\EffectInstance;
