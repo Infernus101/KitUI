@@ -15,4 +15,4 @@ permissions: # kit permissions - kit.<kit name>
    default: false
 commands:
   kit:
-    description: Kit UI!
+    description: §b§lKit UI!
