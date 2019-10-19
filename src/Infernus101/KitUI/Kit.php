@@ -2,10 +2,10 @@
 
 namespace Infernus101\KitUI;
 
+use DaPigGuy\PiggyCustomEnchants\CustomEnchantManager;
 use Infernus101\KitUI\events\KitEquipEvent;
 use Infernus101\KitUI\events\KitPurchaseEvent;
 use onebone\economyapi\EconomyAPI;
-use DaPigGuy\PiggyCustomEnchants\CustomEnchants\CustomEnchants;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\entity\Effect;
 use pocketmine\entity\EffectInstance;
@@ -155,15 +155,11 @@ class Kit {
 		foreach($enchantments as $key => $name_level){
 			if($key % 2 === 0){ //Name expected
 				$enchantment = Enchantment::getEnchantmentByName((string)$name_level);
-				if($enchantment === null){
-					$enchantment = CustomEnchants::getEnchantmentByName((string)$name_level);
+				if($enchantment === null && $this->pl->piggyEnchants !== null && $this->pl->piggyEnchants->isEnabled()){
+					$enchantment = CustomEnchantManager::getEnchantmentByName((string)$name_level);
 				}
 			}elseif($enchantment !== null){
-				if($this->pl->piggyEnchants !== null && $enchantment instanceof CustomEnchants){
-					$this->pl->piggyEnchants->addEnchantment($item, $enchantment->getName(), (int)$name_level);
-				}else{
-					$item->addEnchantment(new EnchantmentInstance($enchantment, (int)$name_level));
-				}
+				$item->addEnchantment(new EnchantmentInstance($enchantment, (int)$name_level));
 			}
 		}
 
