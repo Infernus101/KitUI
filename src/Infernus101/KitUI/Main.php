@@ -2,6 +2,7 @@
 
 namespace Infernus101\KitUI;
 
+use DaPigGuy\PiggyCustomEnchants\PiggyCustomEnchants;
 use Infernus101\KitUI\lang\LangManager;
 use Infernus101\KitUI\tasks\CoolDownTask;
 use Infernus101\KitUI\UI\Handler;
@@ -22,7 +23,7 @@ class Main extends PluginBase implements Listener {
 	public $kitUsed = [];
 	/** @var LangManager */
 	public $language;
-	/** @var \PiggyCustomEnchants\Main */
+	/** @var PiggyCustomEnchants */
 	public $piggyEnchants;
 	/** @var Config */
 	public $config;
